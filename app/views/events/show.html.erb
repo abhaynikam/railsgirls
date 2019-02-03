@@ -1,0 +1,7 @@
+<div class="container">
+  <% if @event.poster_image.present? %>
+    <%= image_tag @event.poster_image, height: '200', class: "img-fluid", alt: "Responsive image" %>
+  <% else %>
+    <%= image_tag "no_image", height: '200', class: "img-fluid", alt: "Responsive image" %>
+  <% end %>
+</div>
