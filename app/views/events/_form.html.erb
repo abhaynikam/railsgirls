@@ -1,0 +1,42 @@
+<%= form_with(model: event, local: true) do |form| %>
+  <% if event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name , class: "form-label"%>
+    <%= form.text_field :name , class: "form-control"%>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :venue , class: "form-label"%>
+    <%= form.text_field :venue , class: "form-control"%>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :description , class: "form-label"%>
+    <%= form.text_field :description , class: "form-control"%>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :event_on , class: "form-label"%>
+    <%= form.date_field :event_on , class: "form-control"%>
+  </div>
+
+  <div class="file-group">
+    <%= form.label :poster_image , class: "form-label"%>
+    <%= form.file_field :poster_image , class: "file"%>
+  </div>
+<br>
+  <div class="actions">
+    <%= form.submit class: "btn btn-primary"%>
+  </div>
+<% end %>
