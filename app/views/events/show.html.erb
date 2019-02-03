@@ -1,7 +1,14 @@
-<div class="container">
+<div class="container mb-2">
   <% if @event.poster_image.present? %>
-    <%= image_tag @event.poster_image, height: '200', class: "img-fluid", alt: "Responsive image" %>
+    <%= image_tag @event.poster_image, height: '200', class: "img-fluid", alt: "Responsive image", style: "width: 100%;" %>
   <% else %>
-    <%= image_tag "no_image", height: '200', class: "img-fluid", alt: "Responsive image" %>
+    <%= image_tag "no_image", height: '200', class: "img-fluid", alt: "Responsive image", style: "width: 100%;" %>
   <% end %>
+
+  <h1><%= @event.name %></h1>
+
+  <p style="text-align: justify-content;"><%= @event.description %></p>
+
+  <%= link_to 'Register', new_student_path, class: "btn btn-primary" %>
 </div>
+
